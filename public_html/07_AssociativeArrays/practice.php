@@ -1,19 +1,28 @@
 <?php
-	
-	// Constants
-	
-	
-	// Custom Variables
 
-	
+	// Constants
+	define("TITLE", "Associative Arrays");
+
+	// Custom Variables
+  $my_name = "Andrew Kl";
+  $lessons_num = 7;
+
+
 	// Moustache Associative Array
+  date_default_timezone_set('Europe/Kiev');
+
+  $handlebar = array(
+    name       => "Handlebar",
+    priority   => "Hight",
+    estimation => 14
+  );
 
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PHP <!-- PAGE TITLE --></title>
+		<title>PHP <?php echo TITLE; ?></title>
 		<link href="/assets/styles.css" rel="stylesheet">
 	</head>
 	<body>
@@ -21,26 +30,26 @@
 			<a href="/" title="Back to directory" id="logo">
 				<img src="/assets/img/logo.png" alt="PHP">
 			</a>
-			
-			<h1>Tutorial <!-- LESSON NUMBER -->: <small><!-- PAGE TITLE --></small></h1>
+
+			<h1>Tutorial <?php echo $lessons_num; ?>: <small><?php echo TITLE; ?></small></h1>
 			<hr>
-			
+
 			<h2>Your Example</h2>
-			
+
 			<div class="sandbox">
-			
-				<h2>The <!-- MOUSTACHE NAME --> Moustache!</h2>
-				<p>This moustache is quite the dirt squirrel! It boasts a creep factor of <strong><!-- CREEP FACTOR --></strong> and takes <strong><!-- GROWTH DAYS --> days</strong> to grow on average.</strong></p>
-				
+
+				<h2>The <?php echo $handlebar[name]; ?> Moustache!</h2>
+				<p>This moustache is quite the dirt squirrel! It boasts a creep factor of <strong><?php echo $handlebar[priority]; ?></strong> and takes <strong><?php echo $handlebar[estimation]; ?> days</strong> to grow on average.</strong></p>
+
 			</div><!-- end sandbox -->
-			
+
 			<a href="index.php" class="button">Back to the lecture</a>
-			
+
 			<hr>
-			
-			<small>&copy;<!-- YEAR --> - <!-- YOUR NAME --></small>
+
+			<small>&copy;<?php echo date('Y'); ?> - <?php echo $my_name; ?></small>
 		</div><!-- end wrapper -->
-		
+
 		<div class="copyright-info">
 			<?php include('../assets/includes/copyright.php'); ?>
 		</div><!-- end copyright-info -->
